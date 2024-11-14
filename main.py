@@ -14,4 +14,17 @@ def count_words():
     words = text.split()
     return len(words)
 
-print(count_words())
+def letter_count():
+    text = main()
+    count_dict = {}
+    for letter in text.lower():
+        if letter in count_dict:
+            count_dict[letter] = count_dict[letter] + 1
+        else:
+            count_dict[letter] = 1
+    print (count_dict)
+    return(count_dict)
+        
+
+
+letter_count()
