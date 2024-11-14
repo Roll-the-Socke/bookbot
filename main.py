@@ -1,7 +1,7 @@
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
-    print(text)
+    return text
 
 
 def get_book_text(path):
@@ -9,4 +9,9 @@ def get_book_text(path):
         return f.read()
 
 
-main()
+def count_words():
+    text = main()
+    words = text.split()
+    return len(words)
+
+print(count_words())
