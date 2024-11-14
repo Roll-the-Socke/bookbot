@@ -22,9 +22,22 @@ def letter_count():
             count_dict[letter] = count_dict[letter] + 1
         else:
             count_dict[letter] = 1
-    print (count_dict)
     return(count_dict)
-        
+
+def report():
+    x = []
+    char_counts = letter_count()
+    for char in char_counts:
+        if char.isalpha():
+            x.append({"char": char, "count": char_counts[char]})
+
+    x.sort(key=lambda d: d["count"], reverse=True)
+
+    for item in x:
+        char = item["char"]
+        count = item["count"]
+
+        print(f"The {char} character was found {count} times!")     
 
 
-letter_count()
+report()
